@@ -1,0 +1,6 @@
+const mongoose = require('mongoose');
+
+mongoose.Schema.Types.String.set("validate", {
+    validator: (valor) => valor !== "",
+    message: ({ path }) => `O campo ${path} foi fornecido.`
+});
